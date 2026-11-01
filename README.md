@@ -9,13 +9,40 @@
 
 ---
 
+## ⚡ Instant Normalized Output (Sample JSON)
+
+```json
+[
+  {
+    "firstName": "Satya",
+    "lastName": "Nadella",
+    "domain": "microsoft.com",
+    "resolved_email": "satya.nadella@microsoft.com",
+    "confidence_score": 98,
+    "pattern_matched": "{first}.{last}@microsoft.com"
+  }
+]
+```
+
+---
+
 ## ⚡ The Problem vs. The Solution
 
 Guessing executive email formats wastes outreach quotas. This engine tests all RFC pattern permutations ({first}.{last}, {first}, {f}{last}) against live MX mailservers to pinpoint the exact mailbox without false positives.
 
 - **Zero-Proxy Architecture:** Pure asynchronous execution designed for extreme speed (<50MB RAM).
-- **Multi-Interface Support:** Run via pure Python SDK, Node.js fetch, n8n / Make.com workflow, or Claude / Cursor MCP Agent.
+- **Multi-Interface Support:** Run via pure Python SDK, cURL, Node.js fetch, n8n / Make.com workflow, or Claude / Cursor MCP Agent.
 - **Production Reliable:** Backed by Apify's serverless infrastructure with 99.9% uptime SLA.
+
+---
+
+## 🚀 Quickstart: 1-Line cURL (Test in 2 Seconds)
+
+```bash
+curl -X POST "https://api.apify.com/v2/acts/deepaksheoran172~b2b-decision-maker-email-finder/run-sync-get-dataset-items?token=YOUR_APIFY_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{\"contacts\": [{\"firstName\": \"Satya\", \"lastName\": \"Nadella\", \"domain\": \"microsoft.com\"}]}'
+```
 
 ---
 
@@ -135,6 +162,14 @@ Each returned item includes normalized, RFC-compliant fields:
 - **Apify Store:** Available under pay-per-result pricing with a **60% Launch Discount**.
 - **Run Online:** Test it instantly on the [Apify Store Console](https://apify.com/deepaksheoran172/b2b-decision-maker-email-finder).
 - **Fleet Hub:** Explore all 62 enterprise scrapers and MCP servers at [b2b-mcp-apify-scrapers-hub](https://deepakshe.github.io/b2b-mcp-apify-scrapers-hub/).
+
+---
+
+## 🛡️ 100% Automated Self-Service & Zero-DM Guarantee
+
+- **Pure Self-Service:** Runs autonomously via Apify Cloud API. No sales calls, manual configuration, or onboarding tickets needed.
+- **Pay-Per-Result:** Only successful output items are billed. Zero-charge on failed executions.
+- **API Documentation:** For key creation, webhooks, and concurrency settings, see [Apify Docs](https://docs.apify.com/platform/actors/running/api).
 
 ---
 
